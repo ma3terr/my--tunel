@@ -1,0 +1,16 @@
+name: Tunnel
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install autossh
+        run: sudo apt update && sudo apt install autossh -y
+
+      - name: Start tunnel
+        run: |
+          autossh -M 0 -N -o "StrictHostKeyChecking=no" \
+          -R 2222:localhost:22 root@YOUR_VULTR_IP -p 443

@@ -13,4 +13,4 @@ jobs:
       - name: Start tunnel
         run: |
           autossh -M 0 -N -o "StrictHostKeyChecking=no" \
-          -R 2222:localhost:22 root@YOUR_VULTR_IP -p 443
+          -R 2222:localhost:22 root@108.61.170.250 -p 443
